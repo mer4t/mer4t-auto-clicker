@@ -1,0 +1,86 @@
+<UserControl x:Class="MertClicker.App.Views.Pages.MyMacrosView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <StackPanel MaxWidth="560" HorizontalAlignment="Left">
+        <TextBlock Text="Makrolarım" Style="{StaticResource PageTitleStyle}"/>
+
+        <TextBlock Text="Kaydedilmiş makrolarınızı burada görebilir, birini seçip F8 (veya Oynat) ile
+                   oynatabilir ya da silebilirsiniz."
+                   Style="{StaticResource PageBodyStyle}" Margin="0,0,0,16" TextWrapping="Wrap"/>
+
+        <TextBlock Text="{Binding HotkeyStatusText}" Style="{StaticResource PageBodyStyle}" Margin="0,0,0,16"/>
+
+        <ListBox ItemsSource="{Binding Macros}" SelectedItem="{Binding SelectedMacro}"
+                 Background="{StaticResource SurfaceBrush}" BorderBrush="{StaticResource BorderBrush}"
+                 MaxHeight="320" Margin="0,0,0,16">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="4">
+                        <TextBlock Text="{Binding Name}" Foreground="{StaticResource PrimaryTextBrush}" FontWeight="SemiBold"/>
+                        <TextBlock Foreground="{StaticResource SecondaryTextBrush}" FontSize="12">
+                            <Run Text="{Binding ActionCount, Mode=OneWay}"/>
+                            <Run Text=" eylem · Güncelleme: "/>
+                            <Run Text="{Binding UpdatedAtUtc, Mode=OneWay, StringFormat='yyyy-MM-dd HH:mm'}"/>
+                        </TextBlock>
+                        <TextBlock Text="{Binding Description}" Foreground="{StaticResource SecondaryTextBrush}"
+                                   FontSize="12" TextWrapping="Wrap"/>
+                        <ItemsControl ItemsSource="{Binding Tags}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Background="{StaticResource BorderBrush}" CornerRadius="3"
+                                            Padding="6,2" Margin="0,2,4,0">
+                                        <TextBlock Text="{Binding}" Foreground="{StaticResource PrimaryTextBrush}" FontSize="11"/>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+            <Button Content="Yenile" Command="{Binding RefreshCommand}" Padding="16,8" Margin="0,0,12,0"/>
+            <Button Content="Oynat (F8)" Command="{Binding PlaySelectedCommand}" Padding="16,8" Margin="0,0,12,0"
+                    Background="{StaticResource AccentBrush}" Foreground="White" BorderThickness="0"/>
+            <Button Content="Duraklat" Command="{Binding PausePlaybackCommand}" Padding="16,8" Margin="0,0,12,0"/>
+            <Button Content="Devam Et" Command="{Binding ResumePlaybackCommand}" Padding="16,8" Margin="0,0,12,0"/>
+            <Button Content="Durdur" Command="{Binding StopPlaybackCommand}" Padding="16,8" Margin="0,0,12,0"/>
+            <Button Content="Sil" Command="{Binding DeleteSelectedCommand}" Padding="16,8" Margin="0,0,12,0"/>
+            <Button Content="Dışa Aktar" Command="{Binding ExportSelectedCommand}" Padding="16,8" Margin="0,0,12,0"/>
+            <Button Content="İçe Aktar" Command="{Binding ImportCommand}" Padding="16,8"/>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,16">
+            <TextBlock Text="Seçili Makronun Açıklama/Etiketlerini Düzenle" Style="{StaticResource PageBodyStyle}"
+                       FontWeight="SemiBold" Margin="0,0,0,8"/>
+            <TextBlock Text="Açıklama" Style="{StaticResource PageBodyStyle}" Margin="0,0,0,4"/>
+            <TextBox Text="{Binding EditDescription, UpdateSourceTrigger=PropertyChanged}"
+                     Background="{StaticResource SurfaceBrush}" Foreground="{StaticResource PrimaryTextBrush}"
+                     BorderBrush="{StaticResource BorderBrush}" Padding="8,6" Margin="0,0,0,12"
+                     AcceptsReturn="True" TextWrapping="Wrap" MinHeight="60"/>
+
+            <TextBlock Text="Etiketler (virgülle ayırın)" Style="{StaticResource PageBodyStyle}" Margin="0,0,0,4"/>
+            <TextBox Text="{Binding EditTagsText, UpdateSourceTrigger=PropertyChanged}"
+                     Background="{StaticResource SurfaceBrush}" Foreground="{StaticResource PrimaryTextBrush}"
+                     BorderBrush="{StaticResource BorderBrush}" Padding="8,6" Margin="0,0,0,12"/>
+
+            <Button Content="Makro Bilgilerini Kaydet" Command="{Binding SaveMacroDetailsCommand}"
+                    Padding="16,8" HorizontalAlignment="Left"
+                    Background="{StaticResource AccentBrush}" Foreground="White" BorderThickness="0"/>
+        </StackPanel>
+
+        <TextBlock Text="{Binding StatusMessage}" Style="{StaticResource PageBodyStyle}"/>
+
+        <TextBlock Text="Yeni bir makro kaydetmek için Makro Kaydedici ekranını kullanın."
+                   Style="{StaticResource PageBodyStyle}" Margin="0,16,0,0" TextWrapping="Wrap"/>
+    </StackPanel>
+</UserControl>

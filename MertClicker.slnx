@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MertClicker.App/MertClicker.App.csproj" />
+    <Project Path="src/MertClicker.Application/MertClicker.Application.csproj" />
+    <Project Path="src/MertClicker.Domain/MertClicker.Domain.csproj" />
+    <Project Path="src/MertClicker.Infrastructure/MertClicker.Infrastructure.csproj" />
+    <Project Path="src/MertClicker.Platform.Windows/MertClicker.Platform.Windows.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MertClicker.Application.Tests/MertClicker.Application.Tests.csproj" />
+    <Project Path="tests/MertClicker.Domain.Tests/MertClicker.Domain.Tests.csproj" />
+    <Project Path="tests/MertClicker.Infrastructure.Tests/MertClicker.Infrastructure.Tests.csproj" />
+    <Project Path="tests/MertClicker.Platform.Windows.Tests/MertClicker.Platform.Windows.Tests.csproj" />
+  </Folder>
+</Solution>
