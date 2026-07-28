@@ -1,8 +1,0 @@
-namespace MertClicker.Application.Models;
-
-public sealed class AutoClickerHotkeyResultEventArgs : EventArgs
-{
-    public required bool IsRunning { get; init; }
-
-    public required string StatusMessage { get; init; }
-}

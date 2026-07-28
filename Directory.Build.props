@@ -1,0 +1,18 @@
+<Project>
+
+  <!-- Tüm projeler için tek, merkezi sürüm kaynağı. Hakkında ekranı bu değeri
+       derleme zamanında Assembly bilgisinden okur; sürümü değiştirmek için
+       yalnızca burası güncellenir. -->
+  <PropertyGroup>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <InformationalVersion>2.0.0</InformationalVersion>
+    <Product>m4 Auto Clicker</Product>
+    <AssemblyTitle>m4 Auto Clicker</AssemblyTitle>
+    <Description>Windows için otomatik tıklama ve makro kaydedici/oynatıcı uygulaması</Description>
+    <Company>mer4t</Company>
+    <Copyright>Copyright (c) 2026 mer4t</Copyright>
+  </PropertyGroup>
+
+</Project>

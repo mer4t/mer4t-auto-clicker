@@ -1,0 +1,58 @@
+<UserControl x:Class="m4AutoClicker.App.Views.Pages.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <HeaderedContentControl Header="Ana Sayfa" Style="{StaticResource PageShellStyle}">
+        <StackPanel HorizontalAlignment="Left">
+            <Border Style="{StaticResource CardStyle}" Margin="{StaticResource CardSpacing}">
+                <StackPanel>
+                    <Label Content="Uygulama Durumu" Style="{StaticResource SectionHeaderStyle}"/>
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Durum" Style="{StaticResource PageBodyStyle}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding ApplicationStatus}" Style="{StaticResource PageBodyStyle}" Foreground="{StaticResource PrimaryTextBrush}"/>
+                    </Grid>
+                    <Border Style="{StaticResource DividerStyle}" Margin="0,0,0,10"/>
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Aktif işlem" Style="{StaticResource PageBodyStyle}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding ActiveOperation}" Style="{StaticResource PageBodyStyle}" Foreground="{StaticResource PrimaryTextBrush}"/>
+                    </Grid>
+                    <Border Style="{StaticResource DividerStyle}" Margin="0,0,0,10"/>
+
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Son kullanılan makro" Style="{StaticResource PageBodyStyle}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding LastUsedMacroName}" Style="{StaticResource PageBodyStyle}" Foreground="{StaticResource PrimaryTextBrush}"/>
+                    </Grid>
+                    <Border Style="{StaticResource DividerStyle}" Margin="0,0,0,10"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Son çalışma sonucu" Style="{StaticResource PageBodyStyle}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding LastRunResult}" Style="{StaticResource PageBodyStyle}" Foreground="{StaticResource PrimaryTextBrush}"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <TextBlock Text="Auto clicker ve makro kaydedici için hızlı başlatma seçenekleri ilerleyen aşamalarda burada yer alacak."
+                       Style="{StaticResource SecondaryTextStyle}"/>
+        </StackPanel>
+    </HeaderedContentControl>
+</UserControl>

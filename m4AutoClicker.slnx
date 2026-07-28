@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/m4AutoClicker.App/m4AutoClicker.App.csproj" />
+    <Project Path="src/m4AutoClicker.Application/m4AutoClicker.Application.csproj" />
+    <Project Path="src/m4AutoClicker.Domain/m4AutoClicker.Domain.csproj" />
+    <Project Path="src/m4AutoClicker.Infrastructure/m4AutoClicker.Infrastructure.csproj" />
+    <Project Path="src/m4AutoClicker.Platform.Windows/m4AutoClicker.Platform.Windows.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/m4AutoClicker.Application.Tests/m4AutoClicker.Application.Tests.csproj" />
+    <Project Path="tests/m4AutoClicker.Domain.Tests/m4AutoClicker.Domain.Tests.csproj" />
+    <Project Path="tests/m4AutoClicker.Infrastructure.Tests/m4AutoClicker.Infrastructure.Tests.csproj" />
+    <Project Path="tests/m4AutoClicker.Platform.Windows.Tests/m4AutoClicker.Platform.Windows.Tests.csproj" />
+  </Folder>
+</Solution>

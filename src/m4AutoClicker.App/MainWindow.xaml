@@ -1,0 +1,44 @@
+<Window x:Class="m4AutoClicker.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="m4 Auto Clicker" Height="640" Width="980" MinHeight="480" MinWidth="720"
+        Background="{StaticResource WindowBackgroundBrush}"
+        Icon="/Assets/logo.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="230"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Column="0" Content="{Binding CurrentViewModel}" Focusable="False"/>
+
+        <Border Grid.Column="1" Background="{StaticResource SidebarBackgroundBrush}"
+                BorderBrush="{StaticResource DividerBrush}" BorderThickness="1,0,0,0">
+            <DockPanel LastChildFill="False">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="24,24,16,32">
+                    <Image Source="/Assets/logo.png" Width="32" Height="32"
+                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <TextBlock FontFamily="{StaticResource SerifFontFamily}" FontSize="17" VerticalAlignment="Center"
+                               Foreground="{StaticResource PrimaryTextBrush}" Margin="10,0,0,0" TextWrapping="Wrap">
+                        <Run Text="m4 Auto"/>
+                        <LineBreak/>
+                        <Run Text="Clicker" Foreground="{StaticResource SecondaryTextBrush}" FontSize="13"/>
+                    </TextBlock>
+                </StackPanel>
+                <ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding NavigationItems}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Title}"
+                                    Style="{StaticResource NavigationButtonStyle}"
+                                    Command="{Binding DataContext.NavigateCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

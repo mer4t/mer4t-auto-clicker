@@ -42,3 +42,6 @@ x86/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Release build outputs (published locally, uploaded as GitHub Release assets instead)
+release-artifacts/
