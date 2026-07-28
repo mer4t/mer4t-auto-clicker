@@ -5,6 +5,7 @@
 **Windows için modern otomatik tıklama ve makro kayıt/oynatma uygulaması**
 
 [![Latest Release](https://img.shields.io/github/v/release/mer4t/mer4t-auto-clicker?label=latest%20release&color=orange)](https://github.com/mer4t/mer4t-auto-clicker/releases/latest)
+[![Build & Test](https://github.com/mer4t/mer4t-auto-clicker/actions/workflows/build.yml/badge.svg)](https://github.com/mer4t/mer4t-auto-clicker/actions/workflows/build.yml)
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)](#)
 [![WPF](https://img.shields.io/badge/UI-WPF-blueviolet)](#)
